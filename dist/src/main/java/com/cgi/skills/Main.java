@@ -14,6 +14,6 @@ public final class Main {
      * @see <a href="https://github.com/undertow-io/undertow/tree/master/examples">Undertow code examples</a>
      */
     public static void main(final String[] args) {
-        new Application().start();
+        new Application("Skills", 8888, "localhost").start();
     }
 }

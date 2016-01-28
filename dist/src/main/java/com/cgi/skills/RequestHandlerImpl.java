@@ -1,5 +1,10 @@
 package com.cgi.skills;
 
+import static org.guppy4j.log.Log.Level.error;
+
+import java.io.IOException;
+import java.io.Writer;
+
 import org.guppy4j.http.Request;
 import org.guppy4j.http.RequestHandler;
 import org.guppy4j.http.Resources;
@@ -7,24 +12,17 @@ import org.guppy4j.http.Response;
 import org.guppy4j.log.Log;
 import org.guppy4j.log.LogProvider;
 
-import java.io.IOException;
-import java.io.Writer;
-
-import static org.guppy4j.log.Log.Level.error;
-
 /**
  * Main HTTP resource handler
  */
 public final class RequestHandlerImpl implements RequestHandler {
 
     private final Log log;
-
     private final Resources resources;
 
-    public RequestHandlerImpl(LogProvider logProvider,
-                              Resources resources) {
-        this.resources = resources;
+    public RequestHandlerImpl(LogProvider logProvider, Resources resources) {
         log = logProvider.getLog(getClass());
+        this.resources = resources;
     }
 
     @Override
